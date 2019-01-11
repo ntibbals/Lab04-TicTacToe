@@ -12,7 +12,9 @@ namespace Lab04_TicTacToe
             Player p1 = new Player();
             Player p2 = new Player();
             Board playBoard = new Board();
-            Game game= new Game (p1, p2);
+            string[,] gb = playBoard.GameBoard;
+            playBoard.DisplayBoard(gb);
+            Game game = new Game (p1, p2);
         }
     }
 }
