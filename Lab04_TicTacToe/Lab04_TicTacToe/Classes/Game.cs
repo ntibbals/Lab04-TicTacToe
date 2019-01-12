@@ -54,13 +54,18 @@ namespace Lab04_TicTacToe.Classes
             PlayerTwo.Marker = "O";
             PlayerOne.IsTurn = true;
             string[,] gb = playBoard.GameBoard;
-            bool winner = true;
-            while (winner)
+            int turn = 0;
+            while (CheckForWinner(playBoard) == false && turn < 7)
             {
+                turn++;
                 playBoard.DisplayBoard(gb);
                 NextPlayer().TakeTurn(playBoard);
                 SwitchPlayer();
+                CheckForWinner(playBoard);
             }
+            playBoard.DisplayBoard(gb);
+            CheckForWinner(playBoard);
+            Console.ReadLine();
             return PlayerOne;
 		}
 
@@ -97,20 +102,20 @@ namespace Lab04_TicTacToe.Classes
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
+                // TODO:  Determine a winner has been reached. 
+                // return true if a winner has been reached. 
+                if (a == "X" && b == "X" && c == "X")
+                {
+                    Console.WriteLine($"{PlayerOne.Name} wins the game!");
+                    return true;
+                }
+                else if (a == "O" && b == "O" && c == "O")
+                {
+                    Console.WriteLine($"{PlayerTwo.Name}  wins the game!");
+                    return true;
+                }
+            }
 
-			}
-            if ("a" == "X" && "b" == "X" && "c" == "X")
-            {
-                Console.WriteLine($"{PlayerOne.Name} wins the game!");
-                return true;
-            }
-            else if ("a" == "O" && "b" == "O" && "c" == "O")
-            {
-                Console.WriteLine($"{PlayerTwo.Name}  wins the game!");
-                return true;
-            }
             return false;
 		}
 
