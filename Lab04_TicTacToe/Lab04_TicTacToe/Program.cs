@@ -8,13 +8,12 @@ namespace Lab04_TicTacToe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             Player p1 = new Player();
             Player p2 = new Player();
-            Board playBoard = new Board();
-            string[,] gb = playBoard.GameBoard;
-            playBoard.DisplayBoard(gb);
-            Game game = new Game (p1, p2);
+            Game play = new Game(p1, p2);
+            play.Play();
+
+
         }
     }
 }

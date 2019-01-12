@@ -28,7 +28,7 @@ namespace Lab04_TicTacToe.Classes
                 Console.WriteLine();
                 for (int j = 0; j < 3; j++)
                 {
-                    Console.Write($" {gameBoard[i, j]}");
+                    Console.Write($"|{gameBoard[i, j]}| ");
                 }
             }
 

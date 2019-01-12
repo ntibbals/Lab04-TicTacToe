@@ -47,6 +47,20 @@ namespace Lab04_TicTacToe.Classes
 
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
+            Board playBoard = new Board();
+            PlayerOne.Name = "Player One";
+            PlayerTwo.Name = "Player Two";
+            PlayerOne.Marker = "X";
+            PlayerTwo.Marker = "O";
+            PlayerOne.IsTurn = true;
+            string[,] gb = playBoard.GameBoard;
+            bool winner = true;
+            while (winner)
+            {
+                playBoard.DisplayBoard(gb);
+                NextPlayer().TakeTurn(playBoard);
+                SwitchPlayer();
+            }
             return PlayerOne;
 		}
 
