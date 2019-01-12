@@ -47,24 +47,29 @@ namespace Lab04_TicTacToe.Classes
 
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
-            Board playBoard = new Board();
+     
             PlayerOne.Name = "Player One";
             PlayerTwo.Name = "Player Two";
-            PlayerOne.Marker = "X";
-            PlayerTwo.Marker = "O";
+            PlayerOne.Marker = "x";
+            PlayerTwo.Marker = "x";
             PlayerOne.IsTurn = true;
-            string[,] gb = playBoard.GameBoard;
+            string[,] gb = Board.GameBoard;
             int turn = 0;
-            while (CheckForWinner(playBoard) == false && turn < 7)
+            while (CheckForWinner(Board) == false && turn < 9)
             {
                 turn++;
-                playBoard.DisplayBoard(gb);
-                NextPlayer().TakeTurn(playBoard);
+                Board.DisplayBoard(gb);
+                NextPlayer().TakeTurn(Board);
                 SwitchPlayer();
-                CheckForWinner(playBoard);
+                CheckForWinner(Board);
             }
-            playBoard.DisplayBoard(gb);
-            CheckForWinner(playBoard);
+
+            CheckForWinner(Board);
+            if (turn > 9)
+            {
+                Console.WriteLine("You've reached a draw!");
+            }
+            Board.DisplayBoard(gb);
             Console.ReadLine();
             return PlayerOne;
 		}
@@ -104,18 +109,19 @@ namespace Lab04_TicTacToe.Classes
 
                 // TODO:  Determine a winner has been reached. 
                 // return true if a winner has been reached. 
-                if (a == "X" && b == "X" && c == "X")
+                Console.Write("A");
+                if (a == "x" && b == "x" && c == "x")
                 {
                     Console.WriteLine($"{PlayerOne.Name} wins the game!");
                     return true;
                 }
-                else if (a == "O" && b == "O" && c == "O")
+                else if (a == "o" && b == "o" && c == "o")
                 {
                     Console.WriteLine($"{PlayerTwo.Name}  wins the game!");
                     return true;
                 }
             }
-
+   
             return false;
 		}
 
