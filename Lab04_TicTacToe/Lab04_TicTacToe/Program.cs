@@ -19,6 +19,7 @@ namespace Lab04_TicTacToe
                 turn++;
                 if(turn > 1)
                 {
+                    Console.WriteLine();
                     Console.WriteLine("Do you want to again? y/n");
 
                 }

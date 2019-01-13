@@ -65,7 +65,11 @@ namespace Lab04_TicTacToe.Classes
             {
                 Console.WriteLine("You've reached a draw!");
             }
-            Console.WriteLine($"{Winner.Name} won the game!");
+            else
+            {
+                Console.WriteLine($"{Winner.Name} won the game!");
+            }
+
             Board.DisplayBoard(gb);
             return Winner;
 		}
