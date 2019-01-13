@@ -67,7 +67,6 @@ namespace Lab04_TicTacToe.Classes
             }
             Console.WriteLine($"{Winner.Name} won the game!");
             Board.DisplayBoard(gb);
-            Console.ReadLine();
             return Winner;
 		}
 
