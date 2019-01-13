@@ -50,8 +50,8 @@ namespace Lab04_TicTacToe.Classes
      
             PlayerOne.Name = "Player One";
             PlayerTwo.Name = "Player Two";
-            PlayerOne.Marker = "x";
-            PlayerTwo.Marker = "x";
+            PlayerOne.Marker = "X";
+            PlayerTwo.Marker = "O";
             PlayerOne.IsTurn = true;
             string[,] gb = Board.GameBoard;
             int turn = 0;
@@ -59,19 +59,20 @@ namespace Lab04_TicTacToe.Classes
             {
                 turn++;
                 Board.DisplayBoard(gb);
+                Console.WriteLine();
                 NextPlayer().TakeTurn(Board);
                 SwitchPlayer();
-                CheckForWinner(Board);
             }
 
             CheckForWinner(Board);
-            if (turn > 9)
+            if (CheckForWinner(Board) == false)
             {
                 Console.WriteLine("You've reached a draw!");
             }
+            Console.WriteLine($"{Winner.Name} won the game!");
             Board.DisplayBoard(gb);
             Console.ReadLine();
-            return PlayerOne;
+            return Winner;
 		}
 
 
@@ -109,15 +110,14 @@ namespace Lab04_TicTacToe.Classes
 
                 // TODO:  Determine a winner has been reached. 
                 // return true if a winner has been reached. 
-                Console.Write("A");
-                if (a == "x" && b == "x" && c == "x")
+                if (a == "X" && b == "X" && c == "X")
                 {
-                    Console.WriteLine($"{PlayerOne.Name} wins the game!");
+                    Winner = PlayerOne;
                     return true;
                 }
-                else if (a == "o" && b == "o" && c == "o")
+                else if (a == "O" && b == "O" && c == "O")
                 {
-                    Console.WriteLine($"{PlayerTwo.Name}  wins the game!");
+                    Winner = PlayerTwo;
                     return true;
                 }
             }
