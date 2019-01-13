@@ -6,9 +6,21 @@ namespace Lab04_TicTacToe.Classes
 {
 	class Game
 	{
+        /// <summary>
+        /// Create first Player Object 
+        /// </summary>
 		public Player PlayerOne { get; set; }
+        /// <summary>
+        /// Create second Player Object
+        /// </summary>
 		public Player PlayerTwo { get; set; }
+        /// <summary>
+        /// Initialize a Winnder Player Object
+        /// </summary>
 		public Player Winner { get; set; }
+        /// <summary>
+        /// Instantiate a Game Board Object
+        /// </summary>
 		public Board Board { get; set; }
 
 
@@ -30,24 +42,7 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
-
-            //TODO: Complete this method and utilize the rest of the class structure to play the game.
-
-            /*
-             * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
-             * 
-             * A few things to get you started:
-            1. A turn consists of a player picking a position on the board with their designated marker. 
-            2. Display the board after every turn to show the most up to date state of the game
-            3. Once a Winner is determined, display the board one final time and return a winner
-
-            Few additional hints:
-                Be sure to keep track of the number of turns that have been taken to determine if a draw is required
-                and make sure that the game continues while there are unmarked spots on the board. 
-
-            Use any and all pre-existing methods in this program to help construct the method logic. 
-             */
-     
+            ///Call stack for initailizing properties of the Player Objects already instantiated
             PlayerOne.Name = "Player One";
             PlayerTwo.Name = "Player Two";
             PlayerOne.Marker = "X";
@@ -55,6 +50,7 @@ namespace Lab04_TicTacToe.Classes
             PlayerOne.IsTurn = true;
             string[,] gb = Board.GameBoard;
             int turn = 0;
+            /// while loop runs until either their is a winner or draw
             while (CheckForWinner(Board) == false && turn < 9)
             {
                 turn++;
@@ -108,7 +104,6 @@ namespace Lab04_TicTacToe.Classes
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-                // TODO:  Determine a winner has been reached. 
                 // return true if a winner has been reached. 
                 if (a == "X" && b == "X" && c == "X")
                 {

@@ -6,6 +6,9 @@ namespace Lab04_TicTacToe.Classes
 {
     class Player
     {
+        /// <summary>
+        /// Name of each player in game
+        /// </summary>
 		public string Name { get; set; }
 		/// <summary>
 		/// P1 is X and P2 will be O
@@ -17,7 +20,11 @@ namespace Lab04_TicTacToe.Classes
 		/// </summary>
 		public bool IsTurn { get; set; }
 
-
+        /// <summary>
+        /// Intializes the cordinates on the board pased on teh user input given and parses the string into a integer for position
+        /// </summary>
+        /// <param name="board">game board</param>
+        /// <returns></returns>
 		public Position GetPosition(Board board)
 		{
 			Position desiredCoordinate = null;
@@ -31,7 +38,11 @@ namespace Lab04_TicTacToe.Classes
 
 		}
 
-
+        /// <summary>
+        /// Takes in coordinate from player and instantiates mark on coordinate on board
+        /// </summary>
+        /// <param name="position">desired coordiante from player</param>
+        /// <returns></returns>
 		public static Position PositionForNumber(int position)
 		{
 			switch (position)
@@ -50,7 +61,10 @@ namespace Lab04_TicTacToe.Classes
 			}
 		}
 
-	
+	   /// <summary>
+       /// Initializes the turn for each player, calls getposition to find location on board
+       /// </summary>
+       /// <param name="board">game board</param>
 		public void TakeTurn(Board board)
 		{
 			IsTurn = true;
@@ -59,6 +73,7 @@ namespace Lab04_TicTacToe.Classes
 
 			Position position = GetPosition(board);
 
+            //conditional statement to determine if space on board based on the position returned from getposition is occupied
 			if (Int32.TryParse(board.GameBoard[position.Row, position.Column], out int _))
 			{
 				board.GameBoard[position.Row, position.Column] = Marker;

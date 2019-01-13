@@ -6,9 +6,13 @@ namespace Lab04_TicTacToe
 {
     class Program
     {
+        /// <summary>
+        /// Initializes continuous game upon page load until exited
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
-            int turn = 0;
+            int turn = 0; //tallies each game in order to display two varying messages
             bool displayGame = true;
             while (displayGame)
             {

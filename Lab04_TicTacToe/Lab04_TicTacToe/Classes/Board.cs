@@ -16,12 +16,12 @@ namespace Lab04_TicTacToe.Classes
 			{"7", "8", "9"},
 		};
 
-
+        /// <summary>
+        /// Nested forloop to display gameboard
+        /// </summary>
+        /// <param name="gameBoard">Gameboard multidimentional array</param>
 		public void DisplayBoard(string[,] gameBoard)
 		{
-
-            //TODO: Output the board to the console
-            //GameBoard = gameBoard;
 
             for (int i = 0; i <3; i++)
             {
