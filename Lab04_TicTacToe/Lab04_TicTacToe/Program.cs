@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Initializes continuous game upon page load until exited
