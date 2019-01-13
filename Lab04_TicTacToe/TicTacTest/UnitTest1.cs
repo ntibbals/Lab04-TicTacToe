@@ -34,9 +34,21 @@ namespace TicTacTest
             Player p2 = new Player();
             Game play = new Game(p1, p2);
 
-            p1.IsTurn = true;
-            
-            Assert.Equal(p1, play.NextPlayer());
+            p1.IsTurn = false;
+            Assert.Equal(p2, play.NextPlayer());
+        }
+
+        [Fact]
+        public void TestForPosition()
+        {
+            ///Test game will return correct position
+            Player p1 = new Player();
+            Player p2 = new Player();
+            Game play = new Game(p1, p2);
+
+            int position = 4;
+            Position expectedPosition = new Position(1, 0);
+            Assert.Equal(expectedPosition, Player.PositionForNumber(position));
         }
     }
 }
