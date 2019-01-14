@@ -24,17 +24,17 @@
 
 - End users initiate the game through "y". They then will switch off each turn, selecting a position based on 1-9. If no winner is reached after all spaces are filled, a draw will occur and they will have the opportunity to start again or end game.
 
-#Landing Page
-![SCREENSHOT]()
+# Landing Page
+![SCREENSHOT](https://github.com/ntibbals/Lab04-TicTacToe/blob/master/Landing.PNG)
 
-#Game Play
-![SCREENSHOT]()
+# Game Play
+![SCREENSHOT](https://github.com/ntibbals/Lab04-TicTacToe/blob/master/play.PNG)
 
-#Position Already Filled
-![SCREENSHOT]()
+# Position Already Filled
+![SCREENSHOT](https://github.com/ntibbals/Lab04-TicTacToe/blob/master/filled.PNG)
 
-#Winner
-![SCREENSHOT]()
+# Winner
+![SCREENSHOT](https://github.com/ntibbals/Lab04-TicTacToe/blob/master/winner.PNG)
 
-#Draw
-![SCREENSHOT]()
+# Draw
+![SCREENSHOT](https://github.com/ntibbals/Lab04-TicTacToe/blob/master/draw.PNG)
