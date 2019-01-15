@@ -39,16 +39,27 @@ namespace TicTacTest
         }
 
         [Fact]
-        public void TestForPosition()
+        public void TestForPositionRow()
         {
-            ///Test game will return correct position
+            ///Test position of row on board given an input for position
             Player p1 = new Player();
             Player p2 = new Player();
             Game play = new Game(p1, p2);
-
             int position = 4;
-            Position expectedPosition = new Position(1, 0);
-            Assert.Equal(expectedPosition, Player.PositionForNumber(position));
+            int expectedRow = 1;
+            Assert.Equal(expectedRow, Player.PositionForNumber(position).Row);
+        }
+
+        [Fact]
+        public void TestForPositionColumn()
+        {
+            ///Test position of collumn on board given an input for position
+            Player p1 = new Player();
+            Player p2 = new Player();
+            Game play = new Game(p1, p2);
+            int position = 4;
+            int testColumn = 0;
+            Assert.Equal(testColumn, Player.PositionForNumber(position).Column);
         }
         [Fact]
         public void TestForReturnofWinner()
